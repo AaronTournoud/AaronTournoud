@@ -1,30 +1,26 @@
-# Modern portfolio website
+# 🌐 Portfolio Personal - Aaron Tournoud
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Este es mi portfolio personal desarrollado con **Next.js**, **React** y **Tailwind CSS**. El sitio presenta quién soy, mis habilidades, proyectos destacados y permite contactarme directamente.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/tournouda-8356s-projects/v0-modern-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/pG3gldAp5Z3)
+## 🛠️ Tecnologías Utilizadas
 
-## Overview
+- [Next.js](https://nextjs.org/) – Framework para React con renderizado híbrido
+- [React](https://reactjs.org/) – Biblioteca para construir interfaces de usuario
+- [Tailwind CSS](https://tailwindcss.com/) – Framework de estilos utilitario
+[Formspree](https://formspree.io/) – Servicio para envío de formularios por email
+- [Vercel](https://vercel.com/) *Despliegue*
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🎯 Funcionalidades
 
-## Deployment
+- Página de inicio con presentación personal
+- Sección de proyectos con descripciones y enlaces
+- Formulario de contacto funcional
+- Diseño 100% responsive para todos los dispositivos
 
-Your project is live at:
+## 🚀 Deploy
 
-**[https://vercel.com/tournouda-8356s-projects/v0-modern-portfolio-website](https://vercel.com/tournouda-8356s-projects/v0-modern-portfolio-website)**
+Este portfolio está desplegado en:
 
-## Build your app
+👉 [Ver Portfolio en Vivo](https://aarontournoud.vercel.app) *(Reemplazá por tu URL de Vercel o dominio personalizado)*
 
-Continue building your app on:
 
-**[https://v0.dev/chat/projects/pG3gldAp5Z3](https://v0.dev/chat/projects/pG3gldAp5Z3)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository

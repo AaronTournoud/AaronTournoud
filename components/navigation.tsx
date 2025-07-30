@@ -17,7 +17,7 @@ export function Navigation() {
       }
 
       // Detectar sección activa
-      const sections = ["inicio", "experiencia", "proyectos", "habilidades", "contacto"]
+      const sections = ["inicio", "experiencia", "proyectos",  "contacto"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -54,7 +54,6 @@ export function Navigation() {
               { name: "Inicio", href: "#inicio" },
               { name: "Experiencia", href: "#experiencia" },
               { name: "Proyectos", href: "#proyectos" },
-              { name: "Habilidades", href: "#habilidades" },
               { name: "Contacto", href: "#contacto" },
             ].map((item) => (
               <a

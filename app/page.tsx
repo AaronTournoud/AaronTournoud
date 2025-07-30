@@ -1,11 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { Github, Linkedin, Mail, Download, ArrowRight } from "lucide-react"
+import { Github, Linkedin, Mail, Download, ArrowRight, Instagram } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { TimelineItem } from "@/components/timeline-item"
 import { ProjectCard } from "@/components/project-card"
-import { SkillItem } from "@/components/skill-item"
 
 export default function Home() {
   return (
@@ -13,56 +12,32 @@ export default function Home() {
       <Navigation />
 
       {/* Sección de inicio */}
-      <section id="inicio" className="pt-28 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <section id="inicio" className="pt-20 pb-10">
+        <div className="container mx-auto px-2 sm:px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Tarjeta de perfil */}
-            <div className="card p-8 flex flex-col items-center text-center">
-              <div className="mb-6 relative w-48 h-48 overflow-hidden rounded-full">
+            <div className="card p-4 sm:p-8 flex flex-col items-center text-center">
+              <div className="mb-6 relative w-32 h-32 sm:w-48 sm:h-48 overflow-hidden rounded-full">
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
+                  src="/yo.jpg?height=600&width=600"
                   alt="Aaron Tournoud"
                   fill
                   className="object-cover"
                   priority
                 />
               </div>
-              <h1 className="text-3xl font-bold mb-2">Aaron Tournoud</h1>
-              <div className="flex items-center justify-center gap-2 mb-4">
+              <h1 className="text-2xl sm:text-3xl font-bold mb-2">Aaron Tournoud</h1>
+              <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
                 <span className="text-primary">⟵</span>
-                <span className="text-xl text-white/80">Desarrollador Web</span>
+                <span className="text-base sm:text-xl text-white/80">Ingeniero en Sistemas de Información (Estudiante Avanzado)</span>
                 <span className="text-primary">⟶</span>
-              </div>
-              <div className="flex gap-4 mt-4">
-                <a
-                  href="https://github.com/aarontournoud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/60 hover:text-primary transition-colors"
-                >
-                  <Github size={24} />
-                </a>
-                <a
-                  href="https://linkedin.com/in/aarontournoud"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/60 hover:text-primary transition-colors"
-                >
-                  <Linkedin size={24} />
-                </a>
-                <a
-                  href="mailto:aaron.tournoud@ejemplo.com"
-                  className="text-white/60 hover:text-primary transition-colors"
-                >
-                  <Mail size={24} />
-                </a>
               </div>
             </div>
 
             {/* Tarjeta de redes */}
-            <div className="card p-8 flex flex-col justify-center items-center">
-              <h2 className="text-3xl font-bold mb-8 text-white/80">Redes</h2>
-              <div className="grid grid-cols-2 gap-6">
+            <div className="card p-4 sm:p-8 flex flex-col justify-center items-center">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-white/80">Redes</h2>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <a
                   href="https://github.com/aarontournoud"
                   target="_blank"
@@ -82,38 +57,23 @@ export default function Home() {
                   <span className="mt-2">LinkedIn</span>
                 </a>
                 <a
-                  href="mailto:aaron.tournoud@ejemplo.com"
+                  href="https://www.instagram.com/aaron_tournoud/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex flex-col items-center text-white/60 hover:text-primary transition-colors"
                 >
-                  <Mail size={40} />
-                  <span className="mt-2">Email</span>
-                </a>
-                <a href="#" className="flex flex-col items-center text-white/60 hover:text-primary transition-colors">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                  <span className="mt-2">Portfolio</span>
-                </a>
+                  <Instagram size={40} />
+                  <span className="mt-2">Instagram</span>
+                </a>                
+                
               </div>
             </div>
 
             {/* Tarjeta de CV */}
-            <div className="card p-8 flex flex-col justify-center items-center">
-              <div className="w-full h-48 relative mb-6">
-                <Image
-                  src="/placeholder.svg?height=300&width=500"
+            <div className="card p-4 sm:p-8 flex flex-col justify-center items-center">
+              <div className="w-full h-32 sm:h-40 relative mb-6 sm:mb-8 object-cover overflow-hidden blur-sm">
+                <Image 
+                  src="/cv.png?height=300&width=500"
                   alt="CV Preview"
                   fill
                   className="object-cover rounded-lg"
@@ -123,33 +83,34 @@ export default function Home() {
                 href="/cv-aaron-tournoud.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary flex items-center gap-2"
+                className="btn btn-primary flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 <Download size={18} />
-                Descargar CV
+                Ver CV
               </a>
             </div>
           </div>
 
           {/* Tarjeta de descripción */}
-          <div className="card p-8 mt-6">
-            <h2 className="text-2xl font-bold mb-4 text-primary">Desarrollador Full-Stack</h2>
-            <p className="text-white/80 text-lg">
-              Desarrollador Full-Stack con experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web.
-              Especializado en tecnologías modernas como React, Next.js, Node.js y bases de datos SQL/NoSQL. Enfocado en
+          <div className="card p-4 sm:p-8 mt-6">
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-primary">Sobre mi</h2>
+            <p className="text-white/80 text-base sm:text-lg">
+            Estudiante avanzado al día con la carrera de Ingeniería en Sistemas de Información en busca de
+            experiencia laboral dentro del ámbito de actividades coordinadas y afines a mi formación académica.
+              Apasionado en el diseño, desarrollo y mantenimiento de aplicaciones web eficientes y escalables.
+              Especializado en tecnologías modernas como React, Angular, Next.js, Node.js. Enfocado en
               crear soluciones eficientes, escalables y con excelente experiencia de usuario.
             </p>
           </div>
 
           {/* Tarjeta de experiencia */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
-            <div className="card p-8 flex flex-col items-center justify-center">
-              <h2 className="text-5xl font-bold text-primary mb-2">+3</h2>
-              <p className="text-white/80">años de experiencia</p>
+            <div className="card p-4 sm:p-8 flex flex-col items-center justify-center">
+              <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-2">+3</h2>
+              <p className="text-white/80 text-base sm:text-lg">años de experiencia</p>
             </div>
-
-            <div className="card p-8 lg:col-span-3">
-              <div className="w-full h-64 relative">
+            <div className="card p-4 sm:p-8 lg:col-span-3">
+              <div className="w-full h-40 sm:h-64 relative">
                 <Image
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                   alt="Tecnologías"
@@ -157,16 +118,10 @@ export default function Home() {
                   className="object-contain opacity-10"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
+                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8">
                     <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                      alt="HTML5"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                      alt="CSS3"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+                      alt="C#"
                       width={50}
                       height={50}
                     />
@@ -177,8 +132,32 @@ export default function Home() {
                       height={50}
                     />
                     <Image
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                      alt="TypeScript"
+                      width={50}
+                      height={50}
+                    />
+                    <Image
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                       alt="React"
+                      width={50}
+                      height={50}
+                    />
+                    <Image
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+                      alt="Angular"
+                      width={50}
+                      height={50}
+                    />
+                    <Image
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                      alt="Tailwind CSS"
+                      width={50}
+                      height={50}
+                    />
+                    <Image
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                      alt="Boostrap"
                       width={50}
                       height={50}
                     />
@@ -195,14 +174,14 @@ export default function Home() {
                       height={50}
                     />
                     <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                      alt="MongoDB"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                      alt="PostgreSQL"
                       width={50}
                       height={50}
                     />
                     <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                      alt="MySQL"
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
+                      alt=""
                       width={50}
                       height={50}
                     />
@@ -212,12 +191,7 @@ export default function Home() {
                       width={50}
                       height={50}
                     />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-                      alt="Tailwind CSS"
-                      width={50}
-                      height={50}
-                    />
+                    
                   </div>
                 </div>
               </div>
@@ -227,295 +201,155 @@ export default function Home() {
       </section>
 
       {/* Sección de experiencia */}
-      <section id="experiencia" className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Experiencia Laboral</h2>
+      <section id="experiencia" className="py-10 sm:py-16 bg-black">
+        <div className="container mx-auto px-2 sm:px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Experiencia Laboral</h2>
 
           <div className="max-w-3xl mx-auto">
             <TimelineItem
-              date="JULIO 2022"
-              title="NE Training"
-              subtitle="Desarrollador Full Stack - Presencial - Mendoza, Argentina"
-              description="Plataforma de entrenamientos personalizados"
+              date="JUL 2023 -"
+              title="MODERADOR DE RECURSOS DIDÁCTICOS  BECA UTN FRCU"
+              subtitle="Becario"
+              description="Confección de cursos para el sitio E-learning dedicado al aprendizaje en línea de diferentes sistemas computacionales."
             >
-              <p className="text-white/80 mb-4">
-                Desarrollo y mantenimiento de plataforma (SaaS) y aplicación web de entrenamientos personalizados.
-              </p>
+              
               <ul className="list-disc pl-5 space-y-2 text-white/80">
-                <li>Modelado y optimización de Base de Datos.</li>
-                <li>Desarrollo de backend escalable utilizando patrones de diseño.</li>
-                <li>Desarrollo y optimización del frontend amigable, minimalista y eficaz.</li>
+                <li>Creacion de contenido utilizando herramientas del Google Suite</li>
+                <li>Gestion de tareas con Trello y Gantt</li>
+                <li>Modalidad Scrum con sprint semanales</li>
               </ul>
             </TimelineItem>
 
             <TimelineItem
-              date="ABRIL 2021"
-              title="Freelance"
-              subtitle="Desarrollador Full Stack - Remoto"
-              description="Desarrollo y mantenimiento plataformas web"
+              date="AGO 2021"
+              title="ADMINISTRACIÓN DE ESTABLECIMIENTO DEPORTIVO "
+              subtitle="Encargado"
+              description="Control del servicio del establecimiento"
             >
               <ul className="list-disc pl-5 space-y-2 text-white/80">
                 <li>
-                  <span className="font-medium">Club Mentor AD</span>, landing page autoadministrable, hecha con Laravel
-                  - MySQL - Inertia - React - Typescript
+                  Gestion de pagos y cobros, control de ingresos y egresos, atención al cliente.
                 </li>
                 <li>
-                  <span className="font-medium">AyePaty</span>, Plataforma web de poductos de belleza con blog, hecha
-                  con Laravel - Livewire - MySql
+                  Gestion de redes sociales, creación de contenido y promoción del establecimiento.
                 </li>
                 <li>
-                  <span className="font-medium">Recicanje</span>, Red Social orientada a la cultura del reciclaje, hecha
-                  con Astro - React - MongoDB - Firebase
+                 Gestion del mantenimiento del establecimiento, coordinación de actividades y eventos deportivos.
                 </li>
-                <li>
-                  <span className="font-medium">Gestion de pagos</span> para un equipo de futbol, hecha con React -
-                  Nodejs - Firebase - MySql
-                </li>
+                
               </ul>
             </TimelineItem>
 
             <TimelineItem
-              date="ENERO 2020"
-              title="Agencia Digital"
-              subtitle="Desarrollador Frontend - Remoto"
-              description="Desarrollo de interfaces de usuario para aplicaciones web"
+              date="SEP 2020"
+              title="AUXILIAR DE DEPÓSITO  JACQUET HNOS. S.A "
+              subtitle="Auxiliar"
+              description="Control de stock y distribución de productos"
             >
               <ul className="list-disc pl-5 space-y-2 text-white/80">
-                <li>Implementación de diseños responsivos utilizando HTML, CSS y JavaScript.</li>
-                <li>Desarrollo de componentes reutilizables con React.</li>
-                <li>Optimización de rendimiento y accesibilidad web.</li>
+                <li>Organizar depósito de materiales y productos para la construcción.</li>
+                <li>Recepción y entrega de mercadería.</li>
+                <li>Experiencia en
+                    sistemas ApolloGes de stock y registro de remitos.
+                </li>
               </ul>
             </TimelineItem>
           </div>
 
-          <h2 className="text-4xl font-bold my-12 text-center">Educación</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold my-8 sm:my-12 text-center">Educación</h2>
 
           <div className="max-w-3xl mx-auto">
             <TimelineItem
-              date="2018-2022"
-              title="Ingeniería Informática"
-              subtitle="Universidad Nacional"
-              description="Especialización en desarrollo de software y sistemas web"
+              date="2022-2026"
+              title="INGENIERIA EN SISTEMAS DE INFORMACIÓN"
+              subtitle="Universidad Tecnológica Nacional"
+              description="Especialización en planificar, dirigir, ejecutar y controlar el revelamiento, análisis, diseño, desarrollo, prueba, implementación y mantenimiento de sistemas de información y de software."
             >
               <ul className="list-disc pl-5 space-y-2 text-white/80">
+                <li>Gestionar proyectos de tecnología.</li>
+                <li> Adaptarse a las nuevas tecnologías y tendencias.</li>
+                <li>Resolver problemas de manera eficiente y creativa.</li>
                 <li>Fundamentos de programación y algoritmos</li>
                 <li>Bases de datos relacionales y no relacionales</li>
-                <li>Desarrollo web full stack</li>
+                <li>Desarrollo fullstack</li>
+                <li>Patrones de diseño de software</li>
+                <li>Metodologías ágiles (Scrum, Kanban)</li>
                 <li>Arquitectura de software</li>
               </ul>
             </TimelineItem>
 
-            <TimelineItem
-              date="2019-2022"
-              title="Certificaciones"
-              subtitle="Plataformas online"
-              description="Formación complementaria en tecnologías web"
-            >
-              <ul className="list-disc pl-5 space-y-2 text-white/80">
-                <li>AWS Certified Developer</li>
-                <li>React Certification</li>
-                <li>UI/UX Design Fundamentals</li>
-              </ul>
-            </TimelineItem>
+            
           </div>
         </div>
       </section>
 
       {/* Sección de proyectos */}
-      <section id="proyectos" className="py-16 bg-[#050a14]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center">Proyectos</h2>
-          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+      <section id="proyectos" className="py-10 sm:py-16 bg-[#050a14]">
+        <div className="container mx-auto px-2 sm:px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Proyectos</h2>
+          <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             Encuentra algunos de los proyectos que he desarrollado tanto de manera independiente como en equipo.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <ProjectCard
-              title="NE Training"
-              subtitle="Plataforma de entrenamientos personalizados"
-              description="Plataforma de entrenamientos personalizados construida con Laravel, Inertia, React + TS, MySQL."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="Laravel, Inertia, React, TypeScript, MySQL"
-              demoUrl="#"
-              codeUrl="#"
+              title="Leonides Floreria"
+              subtitle="Sitio web de comercio de flores"
+              description="Sitio web construido en next.js con react y tailwind css, que permite ver productos de una tienda flores y plantas con un sistema de gestión de contacto via email o Whatsapp."
+              image="/assets/projects/leonides.png"
+              technologies="Next.js, React, Tailwind CSS"
+              demoUrl="https://leonidesfloreria.vercel.app/"
+              
             />
 
             <ProjectCard
-              title="Recicanje"
-              subtitle="Red Social"
-              description="Red social construida con Astro que permite operaciones CRUD para los usuarios, publicaciones y más."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="Astro, React, MongoDB, Firebase"
-              demoUrl="#"
-              codeUrl="#"
+              title="Jempa TV"
+              subtitle="Aplicacion Web"
+              description="Aplicacion web de seguimiento de series y peliculas, con sistema de gestión de usuarios, busqueda, calificacion y watchlist de peliculas."
+              image="/assets/projects/jempatv.png"
+              technologies="C#, ASP.NET Core, Entity Framework, SQL Server, Angular"
+              codeUrl="https://github.com/DesarrolloSoftware2024-JEMPA/JempaTV.git"
             />
 
             <ProjectCard
-              title="Club Mentor AD"
-              subtitle="Landing Page"
-              description="Landing page autoadministrable para club deportivo con sistema de gestión de contenidos."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="Laravel, MySQL, Inertia, React, TypeScript"
-              demoUrl="#"
-              codeUrl="#"
+              title="Vinoteca personal"
+              subtitle="Pagina web de vinos para mi base de datos personal"
+              description="Pagina que muestra los productos de mi base de datos ordenados por categorias, muestra calificaciones y ranking de los productos."
+              image="/assets/projects/vinos.png"
+              technologies="HTML, CSS, JavaScript, PostgreSQL, Express.js"
+              codeUrl="https://github.com/AaronTournoud/WinesVibes.git"
             />
 
             <ProjectCard
-              title="AyePaty"
-              subtitle="E-commerce"
-              description="Plataforma web de productos de belleza con blog integrado y sistema de gestión de inventario."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="Laravel, Livewire, MySQL"
-              demoUrl="#"
-              codeUrl="#"
+              title="Driver tracker"
+              subtitle="Sitio web para seguimiento de sesiones en vivo de formula 1"
+              description="Sitio web que diseña un mapa interactivo de los circuitos de formula 1, con seguimiento en vivo de las sesiones de clasificacion y carrera. Apartir de la conexion a un Endpoint oficial de la formula 1 y la creacion de un WebSocket para el envio al frontend de los datos en tiempo real."
+              image="/assets/projects/drivertracker.png"
+              technologies="Next.js, React, Tailwind CSS"
+              
             />
 
-            <ProjectCard
-              title="Gestión de Pagos"
-              subtitle="Aplicación Web"
-              description="Sistema de gestión de pagos para un equipo de fútbol con reportes y notificaciones."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="React, Node.js, Firebase, MySQL"
-              demoUrl="#"
-              codeUrl="#"
-            />
-
-            <ProjectCard
-              title="Portfolio Personal"
-              subtitle="Sitio Web"
-              description="Portfolio personal desarrollado con Next.js y Tailwind CSS para mostrar proyectos y habilidades."
-              image="/placeholder.svg?height=400&width=600"
-              technologies="Next.js, Tailwind CSS, Framer Motion"
-              demoUrl="#"
-              codeUrl="#"
-            />
+            
           </div>
         </div>
       </section>
 
-      {/* Sección de habilidades */}
-      <section id="habilidades" className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center">Habilidades</h2>
-          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
-            Tecnologías y herramientas con las que trabajo.
-          </p>
-
-          <div className="card p-8">
-            <h3 className="text-2xl font-bold mb-8 text-primary">Frontend</h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
-              <SkillItem
-                name="HTML5"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-              />
-              <SkillItem name="CSS3" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
-              <SkillItem
-                name="JavaScript"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-              />
-              <SkillItem
-                name="TypeScript"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-              />
-              <SkillItem
-                name="React"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-              />
-              <SkillItem
-                name="Next.js"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-              />
-              <SkillItem
-                name="Tailwind"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-              />
-              <SkillItem
-                name="Bootstrap"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-              />
-              <SkillItem name="SASS" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" />
-            </div>
-          </div>
-
-          <div className="card p-8 mt-8">
-            <h3 className="text-2xl font-bold mb-8 text-primary">Backend</h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
-              <SkillItem
-                name="Node.js"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-              />
-              <SkillItem
-                name="Express"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-              />
-              <SkillItem name="PHP" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
-              <SkillItem
-                name="Laravel"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg"
-              />
-              <SkillItem
-                name="MySQL"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-              />
-              <SkillItem
-                name="MongoDB"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-              />
-              <SkillItem
-                name="Firebase"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-              />
-              <SkillItem
-                name="PostgreSQL"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-              />
-            </div>
-          </div>
-
-          <div className="card p-8 mt-8">
-            <h3 className="text-2xl font-bold mb-8 text-primary">Herramientas</h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8">
-              <SkillItem name="Git" icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-              <SkillItem
-                name="GitHub"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-              />
-              <SkillItem
-                name="VS Code"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-              />
-              <SkillItem
-                name="Figma"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-              />
-              <SkillItem
-                name="Docker"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-              />
-              <SkillItem
-                name="AWS"
-                icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+      
       {/* Sección de contacto */}
-      <section id="contacto" className="py-16 bg-[#050a14]">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4 text-center">Contacto</h2>
-          <p className="text-white/60 text-center mb-12 max-w-2xl mx-auto">
+      <section id="contacto" className="py-10 sm:py-16 bg-[#050a14]">
+        <div className="container mx-auto px-2 sm:px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Contacto</h2>
+          <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             ¿Interesado en trabajar juntos? Ponte en contacto conmigo.
           </p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Información de Contacto</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto w-full">
+            <div className="card p-4 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary">Información de Contacto</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="text-primary" size={24} />
-                  <span className="text-white/80">aaron.tournoud@ejemplo.com</span>
+                  <span className="text-white/80">atournoudfrcu@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="text-primary" size={24} />
@@ -535,9 +369,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold mb-6 text-primary">Envíame un mensaje</h3>
-              <form className="space-y-4">
+            <div className="card p-4 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary text-center sm:text-left">Envíame un mensaje</h3>
+              <form
+                className="space-y-4"
+                action="https://formspree.io/f/xnnzverd"
+                method="POST"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-white/80 mb-2 text-sm">
@@ -545,9 +383,11 @@ export default function Home() {
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
                       className="w-full p-3 bg-[#0a1428] border border-[#1e2a3b] rounded-md text-white focus:outline-none focus:border-primary"
                       placeholder="Tu nombre"
+                      required
                     />
                   </div>
                   <div>
@@ -556,9 +396,11 @@ export default function Home() {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
                       className="w-full p-3 bg-[#0a1428] border border-[#1e2a3b] rounded-md text-white focus:outline-none focus:border-primary"
                       placeholder="tu@email.com"
+                      required
                     />
                   </div>
                 </div>
@@ -568,9 +410,11 @@ export default function Home() {
                   </label>
                   <input
                     id="subject"
+                    name="subject"
                     type="text"
                     className="w-full p-3 bg-[#0a1428] border border-[#1e2a3b] rounded-md text-white focus:outline-none focus:border-primary"
                     placeholder="Asunto del mensaje"
+                    required
                   />
                 </div>
                 <div>
@@ -579,12 +423,14 @@ export default function Home() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="w-full p-3 bg-[#0a1428] border border-[#1e2a3b] rounded-md text-white focus:outline-none focus:border-primary"
                     placeholder="Tu mensaje"
+                    required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary flex items-center gap-2">
+                <button type="submit" className="btn btn-primary flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start">
                   Enviar mensaje
                   <ArrowRight size={18} />
                 </button>
@@ -595,12 +441,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-black border-t border-white/10">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-white/60">© {new Date().getFullYear()} Aaron Tournoud. Todos los derechos reservados.</p>
+      <footer className="py-6 sm:py-8 bg-black border-t border-white/10">
+        <div className="container mx-auto px-2 sm:px-4 text-center">
+          <p className="text-white/60 text-sm sm:text-base">© {new Date().getFullYear()} Aaron Tournoud. Todos los derechos reservados.</p>
           <div className="flex justify-center gap-4 mt-4">
             <a
-              href="https://github.com/aarontournoud"
+              href="https://github.com/AaronTournoud"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-primary transition-colors"
@@ -615,7 +461,7 @@ export default function Home() {
             >
               <Linkedin size={20} />
             </a>
-            <a href="mailto:aaron.tournoud@ejemplo.com" className="text-white/60 hover:text-primary transition-colors">
+            <a href="mailto:atournoudfrcu@gmail.com" className="text-white/60 hover:text-primary transition-colors">
               <Mail size={20} />
             </a>
           </div>
