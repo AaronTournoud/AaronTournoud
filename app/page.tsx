@@ -5,27 +5,39 @@ import { Github, Linkedin, Mail, Download, ArrowRight, Instagram } from "lucide-
 import { Navigation } from "@/components/navigation"
 import { TimelineItem } from "@/components/timeline-item"
 import { ProjectCard } from "@/components/project-card"
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white grid-background">
       <Navigation />
 
-      {/* Sección de inicio */}
-      <section id="inicio" className="pt-20 pb-10">
+      <motion.section
+        id="inicio"
+        className="pt-20 pb-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Tarjeta de perfil */}
             <div className="card p-4 sm:p-8 flex flex-col items-center text-center">
-              <div className="mb-6 relative w-32 h-32 sm:w-48 sm:h-48 overflow-hidden rounded-full">
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: 2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="mb-6 relative w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 overflow-hidden rounded-full shadow-lg"
+              >
                 <Image
-                  src="/yo.jpg?height=600&width=600"
+                  src="/yo.jpg"
                   alt="Aaron Tournoud"
                   fill
                   className="object-cover"
                   priority
                 />
-              </div>
+              </motion.div>
               <h1 className="text-2xl sm:text-3xl font-bold mb-2">Aaron Tournoud</h1>
               <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
                 <span className="text-primary">⟵</span>
@@ -106,8 +118,7 @@ export default function Home() {
           {/* Tarjeta de experiencia */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
             <div className="card p-4 sm:p-8 flex flex-col items-center justify-center">
-              <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-2">+3</h2>
-              <p className="text-white/80 text-base sm:text-lg">años de experiencia</p>
+              <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-2">Tecnologias</h2>
             </div>
             <div className="card p-4 sm:p-8 lg:col-span-3">
               <div className="w-full h-40 sm:h-64 relative">
@@ -198,10 +209,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Sección de experiencia */}
-      <section id="experiencia" className="py-10 sm:py-16 bg-black">
+      <motion.section
+        id="experiencia"
+        className="py-10 sm:py-16 bg-black"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Experiencia Laboral</h2>
 
@@ -281,17 +299,24 @@ export default function Home() {
             
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Sección de proyectos */}
-      <section id="proyectos" className="py-10 sm:py-16 bg-[#050a14]">
+      <motion.section
+        id="proyectos"
+        className="py-10 sm:py-16 bg-[#050a14]"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Proyectos</h2>
           <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
             Encuentra algunos de los proyectos que he desarrollado tanto de manera independiente como en equipo.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <ProjectCard
               title="Leonides Floreria"
               subtitle="Sitio web de comercio de flores"
@@ -305,7 +330,7 @@ export default function Home() {
             <ProjectCard
               title="Jempa TV"
               subtitle="Aplicacion Web"
-              description="Aplicacion web de seguimiento de series y peliculas, con sistema de gestión de usuarios, busqueda, calificacion y watchlist de peliculas."
+              description="Aplicacion web de seguimiento de series y peliculas desarrollada en grupo, con sistema de gestión de usuarios, busqueda, calificacion y watchlist de peliculas."
               image="/assets/projects/jempatv.png"
               technologies="C#, ASP.NET Core, Entity Framework, SQL Server, Angular"
               codeUrl="https://github.com/DesarrolloSoftware2024-JEMPA/JempaTV.git"
@@ -332,11 +357,18 @@ export default function Home() {
             
           </div>
         </div>
-      </section>
+      </motion.section>
 
       
       {/* Sección de contacto */}
-      <section id="contacto" className="py-10 sm:py-16 bg-[#050a14]">
+      <motion.section
+        id="contacto"
+        className="py-10 sm:py-16 bg-[#050a14]"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Contacto</h2>
           <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
@@ -438,7 +470,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="py-6 sm:py-8 bg-black border-t border-white/10">
