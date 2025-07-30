@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        {/* Puedes usar otro formato, por ejemplo PNG: <link rel="icon" href="/favicon.png" /> */}
-      </head>
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/icon.png" />
+</head>
       <body className={`${inter.className} bg-black text-white`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
