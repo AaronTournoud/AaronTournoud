@@ -5,14 +5,26 @@ import { Github, Linkedin, Mail, Download, ArrowRight, Instagram } from "lucide-
 import { Navigation } from "@/components/navigation"
 import { TimelineItem } from "@/components/timeline-item"
 import { ProjectCard } from "@/components/project-card"
+import { useInView } from "@/hooks/useInView"
 
 export default function Home() {
+  const [inicioRef, inicioInView] = useInView({ threshold: 0.2 })
+  const [expRef, expInView] = useInView({ threshold: 0.2 })
+  const [proyRef, proyInView] = useInView({ threshold: 0.2 })
+  const [contactoRef, contactoInView] = useInView({ threshold: 0.2 })
+
   return (
     <div className="min-h-screen bg-black text-white grid-background">
       <Navigation />
 
       {/* Sección de inicio */}
-      <section id="inicio" className="pt-20 pb-10">
+      <section
+        ref={inicioRef}
+        id="inicio"
+        className={`pt-20 pb-10 transition-all duration-500 ease-out ${
+          inicioInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Tarjeta de perfil */}
@@ -106,93 +118,33 @@ export default function Home() {
           {/* Tarjeta de experiencia */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
             <div className="card p-4 sm:p-8 flex flex-col items-center justify-center">
-              <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-2">+3</h2>
-              <p className="text-white/80 text-base sm:text-lg">años de experiencia</p>
+              <h2 className="text-3xl sm:text-5xl font-bold text-primary mb-2">Tecnologias</h2>
             </div>
             <div className="card p-4 sm:p-8 lg:col-span-3">
-              <div className="w-full h-40 sm:h-64 relative">
-                <Image
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                  alt="Tecnologías"
-                  fill
-                  className="object-contain opacity-10"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="grid grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8">
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-                      alt="C#"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                      alt="JavaScript"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                      alt="TypeScript"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                      alt="React"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
-                      alt="Angular"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
-                      alt="Tailwind CSS"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                      alt="Boostrap"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-                      alt="Next.js"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                      alt="Node.js"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                      alt="PostgreSQL"
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
-                      alt=""
-                      width={50}
-                      height={50}
-                    />
-                    <Image
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                      alt="Git"
-                      width={50}
-                      height={50}
-                    />
-                    
-                  </div>
+              <div className="w-full h-auto sm:h-64 relative flex flex-col items-center justify-center">
+                {/* Fondo React solo en desktop */}
+                <div className="hidden sm:block absolute inset-0">
+                  <Image
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                    alt="Tecnologías"
+                    fill
+                    className="object-contain opacity-10"
+                  />
+                </div>
+                {/* Grid de tecnologías siempre visible y sin superposición en móvil */}
+                <div className="relative z-10 grid grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-8 w-full justify-items-center">
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="Angular" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width={50} height={50} />
                 </div>
               </div>
             </div>
@@ -201,7 +153,13 @@ export default function Home() {
       </section>
 
       {/* Sección de experiencia */}
-      <section id="experiencia" className="py-10 sm:py-16 bg-black">
+      <section
+        ref={expRef}
+        id="experiencia"
+        className={`py-10 sm:py-16 bg-black transition-all duration-500 ease-out ${
+          expInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Experiencia Laboral</h2>
 
@@ -284,7 +242,13 @@ export default function Home() {
       </section>
 
       {/* Sección de proyectos */}
-      <section id="proyectos" className="py-10 sm:py-16 bg-[#050a14]">
+      <section
+        ref={proyRef}
+        id="proyectos"
+        className={`py-10 sm:py-16 bg-[#050a14] transition-all duration-500 ease-out ${
+          proyInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Proyectos</h2>
           <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
@@ -305,7 +269,7 @@ export default function Home() {
             <ProjectCard
               title="Jempa TV"
               subtitle="Aplicacion Web"
-              description="Aplicacion web de seguimiento de series y peliculas, con sistema de gestión de usuarios, busqueda, calificacion y watchlist de peliculas."
+              description="Aplicacion web de seguimiento de series y peliculas desarrollada en grupo, con sistema de gestión de usuarios, busqueda, calificacion y watchlist de peliculas."
               image="/assets/projects/jempatv.png"
               technologies="C#, ASP.NET Core, Entity Framework, SQL Server, Angular"
               codeUrl="https://github.com/DesarrolloSoftware2024-JEMPA/JempaTV.git"
@@ -336,7 +300,13 @@ export default function Home() {
 
       
       {/* Sección de contacto */}
-      <section id="contacto" className="py-10 sm:py-16 bg-[#050a14]">
+      <section
+        ref={contactoRef}
+        id="contacto"
+        className={`py-10 sm:py-16 bg-[#050a14] transition-all duration-500 ease-out ${
+          contactoInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="container mx-auto px-2 sm:px-4">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-center">Contacto</h2>
           <p className="text-white/60 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">

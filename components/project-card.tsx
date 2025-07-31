@@ -13,9 +13,13 @@ interface ProjectCardProps {
 
 export function ProjectCard({ title, subtitle, description, image, technologies, demoUrl, codeUrl }: ProjectCardProps) {
   return (
-    <div className="project-card">
-      <div className="relative h-48 w-full">
-        <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+    <div className="project-card sm:p-8 flex flex-col h-full">
+      <div className="relative w-full min-h-[180px] sm:min-h-[220px] max-h-[260px] flex items-center justify-center mb-4 rounded-lg overflow-hidden bg-[#000000]">
+        <Image src={image}
+          alt={title}
+          fill
+          className="object-contain"
+          sizes="(max-width: 640px) 100vw, 400px"/>
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold text-white mb-1">{title}</h3>
