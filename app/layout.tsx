@@ -21,6 +21,12 @@ export default function RootLayout({
       <head>
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/icon.png" />
+
+        <meta property="og:title" content="Mi Portafolio - Aaron Tournoud" />
+        <meta property="og:description" content="Portafolio profesional de Aaron Tournoud con proyectos y habilidades en desarrollo web" />
+        <meta property="og:image" content="https://aaron-tournoud.vercel.app/preview.jpg" />
+        <meta property="og:url" content="https://aaron-tournoud.vercel.app" />
+        <meta property="og:type" content="website" />
 </head>
       <body className={`${inter.className} bg-black text-white`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
