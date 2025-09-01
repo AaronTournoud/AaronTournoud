@@ -12,6 +12,37 @@ export default function Home() {
   const [expRef, expInView] = useInView({ threshold: 0.2 })
   const [proyRef, proyInView] = useInView({ threshold: 0.2 })
   const [contactoRef, contactoInView] = useInView({ threshold: 0.2 })
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch('https://formspree.io/f/xnnzverd', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message')
+      })
+    });
+
+    if (response.ok) {
+      form.reset();
+      alert('¡Mensaje enviado correctamente!');
+    } else {
+      throw new Error(`Error ${response.status}: ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error('Error al enviar el mensaje:', error);
+    alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+  }
+};
 
   return (
     <div className="min-h-screen bg-black text-white grid-background">
@@ -343,8 +374,9 @@ export default function Home() {
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-primary text-center sm:text-left">Envíame un mensaje</h3>
               <form
                 className="space-y-4"
-                action="https://formspree.io/f/xnnzverd"
-                method="POST"
+                
+                onSubmit={handleSubmit}
+                 
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
