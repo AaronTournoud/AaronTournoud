@@ -32,6 +32,6 @@ Este es mi portfolio personal desarrollado con **Next.js**, **React** y **Tailwi
 
 Este portfolio está desplegado en:
 
-👉 [Ver Portfolio en Vivo](https://aarontournoud.vercel.app) 
+👉 [Ver Portfolio en Vivo](https://aaron-tournoud.vercel.app) 
 
 
