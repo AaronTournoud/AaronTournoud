@@ -176,6 +176,7 @@ export default function Home() {
                   <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width={50} height={50} />
                   <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" alt="SQL Server" width={50} height={50} />
                   <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width={50} height={50} />
+                  <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/expo/expo-original.svg" alt="Expo" width={50} height={50} />
                 </div>
               </div>
             </div>
@@ -287,6 +288,16 @@ export default function Home() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+             <ProjectCard
+              title="Falso 9"
+              subtitle="Aplicacion para jugar al impostor con jugadores de futbol"
+              description="Desarrollo en React Native con Expo para Android y Web, permite jugar al juego del impostor con jugadores de futbol. "
+              image="/assets/projects/falso9.png"
+              technologies="React Native, Expo"
+              demoUrl="https://falso9impostor.vercel.app/"
+              
+            />
+
             <ProjectCard
               title="Leonides Floreria"
               subtitle="Sitio web de comercio de flores"
